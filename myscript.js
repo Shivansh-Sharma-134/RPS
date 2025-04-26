@@ -1,18 +1,41 @@
 const choice=["rock","paper","scissors"]
-const humanScore =0;
-const computerScore=0;
+let humanScore =0;
+let computerScore=0;
 const getComputerChoice = ()=>{
-    return choice[Math.floor(Math.random(3))]
+    return choice[Math.floor(Math.random()*3)]
 }
 const getHumanChoice=()=>{
-    return prompt("please enter your choice\n1. Rock\n2. Paper\n3. Scissors", 3);
+    return prompt("please enter your choice\n1. Rock\n2. Paper\n3. Scissors");
 }
 
 const playRound =(humanChoice, computerChoice)=>{
-
+    if(humanChoice.toLowerCase() == computerChoice){
+        console.log("Draw" )
+        return;
+    }
+    else if(humanChoice.toLowerCase() == "rock" && computerChoice =="scissors"){ 
+        humanScore++;
+        console.log("you win computer chose:"+computerChoice)
+        return;
+    }
+    else if(humanChoice.toLowerCase() == "paper" && computerChoice =="rock"){
+        humanScore++;
+        console.log("you win computer chose:"+computerChoice)
+        return;
+    }
+    else if(humanChoice.toLowerCase() == "scissors" &&computerChoice =="paper"){
+        humanScore++
+        console.log("you win computer chose:"+computerChoice)
+        return;
+    }
+    else {
+        computerScore++
+        console.log("you lose computer chose:"+computerChoice)
+        return;
+    }
 }
 
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
-
+console.log(Math.floor(Math.random()*3))
 playRound(humanSelection, computerSelection);
