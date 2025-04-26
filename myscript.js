@@ -1,4 +1,6 @@
-const btn = document.getElementById("play");
+const rockBtn = document.getElementById("rock");
+const paperBtn = document.getElementById("paper");
+const scissorBtn = document.getElementById("scissor");
 const choice=["rock","paper","scissors"]
 let humanScore =0;
 let computerScore=0;
@@ -46,4 +48,6 @@ i++
 }
 humanScore>computerScore? console.log("You Win the Game!!!"):humanScore<computerScore? console.log("You Lose The Game"):console.log("Its a Draw!!");
 }
-btn.addEventListener("click",playGame);
+rockBtn.addEventListener("click",playRound);
+paperBtn.addEventListener("click",playRound);
+scissorBtn.addEventListener("click",playRound);
