@@ -1,3 +1,4 @@
+const btn = document.getElementById("play");
 const choice=["rock","paper","scissors"]
 let humanScore =0;
 let computerScore=0;
@@ -34,8 +35,15 @@ const playRound =(humanChoice, computerChoice)=>{
         return;
     }
 }
-
+function playGame(){
+    let i = 0;
+    while(i<5){
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 console.log(Math.floor(Math.random()*3))
-playRound(humanSelection, computerSelection);
+playRound(humanSelection, computerSelection);    
+i++
+}
+humanScore>computerScore? console.log("You Win the Game!!!"):humanScore<computerScore? console.log("You Lose The Game"):console.log("Its a Draw!!");
+}
+btn.addEventListener("click",playGame);
